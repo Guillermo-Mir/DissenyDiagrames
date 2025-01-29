@@ -1,0 +1,28 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class BegudaMonster {
+    -- Atributs --
+    - sabor: String
+    - qCafeina: Int
+    - colors: String
+    - volum: Int
+    -- Mètodes --
+
+
+}
+
+class Participant {
+    -- Atributs --
+    - nom: String
+    - edat: Int
+    - totalCafeina: Int
+    - begudesConsumides: List<BegudaMonster>
+    -- Mètodes --
+    + Consum(): List<BegudaMonster>
+    + consultaCafeina (totalCafeina): Int
+    + LimitCafeina(): Int
+}
+
+BegudaMonster o-right- Participant
+@enduml

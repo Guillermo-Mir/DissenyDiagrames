@@ -1,0 +1,31 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Animal {
+    -- Atributs --
+    - especie: String
+    - edat: Int
+    - nom: String
+    - habitat: String
+    -- Mètodes --
+    + moure(): String
+    + so(): String
+    + menjar(): String
+}
+
+class Visitant {
+    -- Atributs --
+    - nom: String
+    - edat: Int
+    - data_visita: Int
+    - animalsVisitats: List<Animal>
+    -- Mètodes --
+    + getAnimal(): List<Animal>
+
+}
+
+
+
+Animal o-right- Visitant
+
+@enduml

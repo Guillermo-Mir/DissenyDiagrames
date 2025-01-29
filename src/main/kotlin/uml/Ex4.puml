@@ -1,0 +1,27 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class PeçaDeRoba {
+    -- Atributs --
+    - nom: String
+    - talla: Int
+    - preu: Int
+    - categoria: String
+    -- Mètodes --
+    + aplicarDescompte()
+    + getConsulta(): String
+
+}
+
+class Client {
+    -- Atributs --
+    - nom: String
+    - email: String
+    - cistella: List<PeçaDeRoba>
+    -- Mètodes --
+    + afegirPeça()
+    + totalPreu(): Int
+}
+PeçaDeRoba o-right- Client
+
+@enduml
