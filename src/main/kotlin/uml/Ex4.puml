@@ -1,6 +1,7 @@
 @startuml
 'https://plantuml.com/class-diagram
 
+
 class PeçaDeRoba {
     -- Atributs --
     - nom: String
@@ -23,6 +24,5 @@ class Client {
     + afegirPeça(carret: List<PeçaDeRoba>)
     + totalPreu(carret: List<PeçaDeRoba>): Int
 }
-
 
 @enduml

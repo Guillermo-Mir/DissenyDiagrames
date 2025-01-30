@@ -26,5 +26,4 @@ class Participant {
     + LimitOMS (totalCafeina: Float): Boolean
 }
 
-
 @enduml
