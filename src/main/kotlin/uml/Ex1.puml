@@ -28,4 +28,5 @@ enum TipusPokemon {
     electric
 }
 
+
 @enduml
