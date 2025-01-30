@@ -21,6 +21,11 @@ class JugadorPokemon {
     - cartes: List<CartaPokemon>
 }
 
-CartaPokemon o-right- JugadorPokemon
+enum TipusPokemon {
+    foc
+    aigua
+    planta
+    electric
+}
 
 @enduml

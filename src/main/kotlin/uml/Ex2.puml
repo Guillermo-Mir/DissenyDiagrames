@@ -8,9 +8,10 @@ class Animal {
     - nom: String
     - habitat: String
     -- Mètodes --
-    + moure(): String
-    + so(): String
-    + menjar(): String
+    + constructor(especie: String, edat: Int, nom: String, habitat: String)
+    + moure()
+    + so()
+    + menjar()
 }
 
 class Visitant {
@@ -20,12 +21,13 @@ class Visitant {
     - data_visita: Int
     - animalsVisitats: List<Animal>
     -- Mètodes --
-    + getAnimal(): List<Animal>
+    + constructor(nom: String, edat: Int,  animalsVisitats: List<Animal>)
+    + afegirAnimal(): List<Animal>
 
 }
 
 
 
-Animal o-right- Visitant
+
 
 @enduml

@@ -5,10 +5,11 @@ class PeçaDeRoba {
     -- Atributs --
     - nom: String
     - talla: Int
-    - preu: Int
+    - preu: Float
     - categoria: String
     -- Mètodes --
-    + aplicarDescompte()
+     + constructor(nom: String, talla: String, preu: Float, categoria: String)
+    + aplicarDescompte(preu):Float
     + getConsulta(): String
 
 }
@@ -19,9 +20,9 @@ class Client {
     - email: String
     - cistella: List<PeçaDeRoba>
     -- Mètodes --
-    + afegirPeça()
-    + totalPreu(): Int
+    + afegirPeça(carret: List<PeçaDeRoba>)
+    + totalPreu(carret: List<PeçaDeRoba>): Int
 }
-PeçaDeRoba o-right- Client
+
 
 @enduml

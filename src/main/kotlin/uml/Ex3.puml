@@ -16,13 +16,15 @@ class Participant {
     -- Atributs --
     - nom: String
     - edat: Int
-    - totalCafeina: Int
+    - totalCafeina: Float
     - begudesConsumides: List<BegudaMonster>
     -- Mètodes --
-    + Consum(): List<BegudaMonster>
-    + consultaCafeina (totalCafeina): Int
-    + LimitCafeina(): Int
+    + constructor(nom: String, dataNaixement: LocalDate, totalCafeina: Float,  begudesConsumides: List<BegudaMonster>)
+    + registrar (nova: List<BegudaMonster>): List<BegudaMonster>
+    + consultarCafeina (totalCafeina: Float): Float
+    + calcularEdat (dataNaixement: LocalDate): Int
+    + LimitOMS (totalCafeina: Float): Boolean
 }
 
-BegudaMonster o-right- Participant
+
 @enduml
