@@ -1,0 +1,42 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+
+class Jugador {
+    -- Atributs --
+    - nom: String
+    - gols: Int
+    - posicio:String
+    - assistencies: Int
+    -- Mètodes --
+    + constructor(String, Int, String, Int)
+    + marcarGol(): Int
+    + ferAssistencia(): Int
+}
+
+class Entrenador{
+    -- Atributs --
+    - nom: String
+    - equip: Equip
+    -- Mètodes --
+    + constructor(String, Equip)
+    + entrenar()
+}
+
+
+class Equip {
+    -- Atributs --
+    - nom: String
+    - entrenador: Entrenador
+    - jugadors: List<Jugador>
+    - punts: Int
+    -- Mètodes --
+    + constructor(String, String, List<Jugador>, punts)
+    + afegirJugador(Jugador)
+    + sumarPuntsEquip(Int)
+}
+
+Equip "1" *-down- "N" Jugador
+
+Equip "1" *-right- "1" Entrenador
+@enduml

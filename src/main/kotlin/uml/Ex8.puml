@@ -1,0 +1,68 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+enum Tipus {
+    electric
+    combustible
+}
+
+enum Marxes{
+    automatic
+    manual
+}
+class Cotxe{
+    -- Atributs --
+    - nom: String
+    - motor: Tipus
+    - marxes: Marxes
+    -- Mètodes --
+    + constructor(String, Tipus, Marxes, Tipus)
+    + arrancar()
+    + accelerar()
+    + frenar()
+}
+
+class Instructor{
+    -- Atributs --
+    - nom: String
+    - anysExperiencia: Int
+    - cotxeUtilitzat: Cotxe
+    -- Mètodes --
+    + constructor(String, Int, Cotxe)
+    + assignarPractica(Alumne, Practica): Boolean
+    + consultarTotalPractiques(): Int
+
+}
+
+class Alumne {
+    -- Atributs --
+    - nom: String
+    - edat: Int
+    - teoricaAprovada: Boolean
+    - practriquesFetes: Int
+    -- Mètodes --
+    + constructor(String, Int, Boolean, Int)
+    + sumarPractica()
+    + getPractriquesFetes(): Int
+    + setAprovarTeorica()
+}
+
+class Practica {
+    -- Atributs --
+    - profesor: Instructor
+    - alumne: Alumne
+    - data: Date
+    -- Mètodes --
+    + constructor(Instructor, Alumne, Date)
+    + setDurada(durada: Int)
+}
+
+Cotxe "1" o-down- "N" Instructor: Utilitza
+Cotxe "1" o-down- "N" Alumne: Utilitza
+Instructor "1" o-left- "N" Practica: Realitza
+Alumne "1" o-down- "N" Practica: Realitza
+Alumne "1" o-right- "1" Instructor: Te
+Tipus "1" o-right- "N" Cotxe: Te
+Marxes "1" o-right- "N" Cotxe: Te
+
+@enduml

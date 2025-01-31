@@ -5,12 +5,12 @@
 class PeçaDeRoba {
     -- Atributs --
     - nom: String
-    - talla: Int
+    - talla: Float
     - preu: Float
     - categoria: String
     -- Mètodes --
-     + constructor(nom: String, talla: String, preu: Float, categoria: String)
-    + aplicarDescompte(preu):Float
+    + constructor(String, Float, Float, String)
+    + aplicarDescompte(Float)
     + getConsulta(): String
 
 }
@@ -21,8 +21,11 @@ class Client {
     - email: String
     - cistella: List<PeçaDeRoba>
     -- Mètodes --
-    + afegirPeça(carret: List<PeçaDeRoba>)
-    + totalPreu(carret: List<PeçaDeRoba>): Int
+    + constructor(String, String, List<PeçaDeRoba>)
+    + afegirPeça(PeçaDeRoba)
+    + totalPreu(): Float
 }
+
+Client "1" o-down- "N" PeçaDeRoba: Compra
 
 @enduml

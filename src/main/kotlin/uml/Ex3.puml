@@ -8,6 +8,8 @@ class BegudaMonster {
     - colors: String
     - volum: Int
     -- Mètodes --
+    + constructor(String, Int, String, Int)
+    + getCafeina(): Int
 
 
 }
@@ -15,15 +17,18 @@ class BegudaMonster {
 class Participant {
     -- Atributs --
     - nom: String
-    - edat: Int
+    - edat: date
     - totalCafeina: Float
     - begudesConsumides: List<BegudaMonster>
     -- Mètodes --
-    + constructor(nom: String, dataNaixement: LocalDate, totalCafeina: Float,  begudesConsumides: List<BegudaMonster>)
-    + registrar (nova: List<BegudaMonster>): List<BegudaMonster>
-    + consultarCafeina (totalCafeina: Float): Float
-    + calcularEdat (dataNaixement: LocalDate): Int
-    + LimitOMS (totalCafeina: Float): Boolean
+    + constructor(String, dataNaixement: LocalDate, totalCafeina: Float,  begudesConsumides: List<BegudaMonster>)
+    + registrar (BegudaMonster)
+    + getConsultarCafeina(): Float
+    + calcularEdat (): Int
+    + limitOMS (): Boolean
+    - recalcularTotalCafeina(): Float
 }
+Participant "1" o-down- "N" BegudaMonster: Consumeix
+
 
 @enduml

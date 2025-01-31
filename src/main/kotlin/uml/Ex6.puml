@@ -1,0 +1,44 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Beguda{
+    -- Atributs --
+    - nom: String
+    - percentatgeAlcohol: Float
+    - preu: Float
+    -- Mètodes --
+    + constructor(String, Float, Float)
+}
+
+class Amic {
+    -- Atributs --
+    - nom: String
+    - pressupost: Float
+    - begudaPreferida: Beguda
+    - begudesConsumides: List<Beguda>
+    -- Mètodes --
+    + constructor(String, Int, Beguda, List<Beguda>)
+    + pagarEntrada(preuEntrada: Int)
+    + demanarBeguda(consumides: List<Beguda>): List<Beguda>
+}
+
+class Discoteca {
+    -- Atributs --
+    - nom: String
+    - preuEntrada: Float
+    - begudesDisponibles: List<Beguda>
+    - persones: List<Amic>
+    - capacitat: Int
+    -- Mètodes --
+    + constructor(String, Int, List<Beguda>, List<Amic>, Int)
+    + getBegudes(): List<Beguda>
+    + registrarAmic(Amic)
+    + setAforo(Int)
+    + comprobarAforo(): Boolean
+}
+
+Discoteca "N" o-down- "M" Amic: van
+Discoteca "M" o-right- "M" Beguda: te
+Amic "1" o-down- "N" Beguda: beu
+
+@enduml
